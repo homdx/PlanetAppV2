@@ -94,7 +94,7 @@ fullscreen = 1
 # the apk.
 # android.p4a_dir = /home/lars/Dev/python-for-android/
 #android.p4a_dir = %(source.dir)s/.buildozer/android/platform/python-for-android-master/
-p4a.source_dir = /home/lars/Dev/python-for-android/
+# p4a.source_dir = /home/lars/Dev/python-for-android/
 
 # (list) python-for-android whitelist
 #android.p4a_whitelist =

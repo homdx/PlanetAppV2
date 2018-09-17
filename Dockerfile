@@ -66,7 +66,9 @@ USER ${USER}
 
 COPY . .
 
-RUN buildozer android debug || /bin/true
+RUN  cd engine_src/cplanet/src/ && python setup.py install --user user && cd .. && cd .. && cd .. \
+  && cd engine_src/crk4engine/src/ && python setup.py install --user user && cd .. && cd .. && cd .. \
+  && buildozer android debug || /bin/true
 
 CMD tail -f /var/log/faillog
 

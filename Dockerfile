@@ -60,11 +60,12 @@ RUN sed s/'name="java.target" value="1.5"'/'name="java.target" value="7"'/ -i ${
 #  && tar -xvf crystax.tar.xz && rm ~/.buildozer/crystax.tar.xz 
 
 USER root
+
+COPY . .
+
 RUN chown user /home/user/ -R && chown user /home/user/hostcwd
 
 USER ${USER}
-
-COPY . .
 
 RUN  cd engine_src/cplanet/src/ && python setup.py install --user user && cd .. && cd .. && cd .. \
   && cd engine_src/crk4engine/src/ && python setup.py install --user user && cd .. && cd .. && cd .. \

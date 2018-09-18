@@ -67,8 +67,8 @@ RUN chown user /home/user/ -R && chown user /home/user/hostcwd
 
 USER ${USER}
 
-RUN  cd engine_src/cplanet/src/ && python setup.py install --user user && cd .. && cd .. && cd .. \
-  && cd engine_src/crk4engine/src/ && python setup.py install --user user && cd .. && cd .. && cd .. \
+RUN  cd engine_src/cplanet/src/ && python setup.py install && cd .. && cd .. && cd .. \
+  && cd engine_src/crk4engine/src/ && python setup.py install  && cd .. && cd .. && cd .. \
   && buildozer android debug || /bin/true
 
 CMD tail -f /var/log/faillog
